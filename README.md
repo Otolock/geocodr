@@ -3,7 +3,7 @@ A node module that uses Google's Geocoding API to return latitude and longitude
 
 # Getting Started
 1. Install geocodr and save it to your project.
-`npm install --save '@otolock/geocodr'
+`npm install --save '@otolock/geocodr'`
 2. Obtain a Google Geocoding API key: [Getting an API key](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 
 # Sample Usage
