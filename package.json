@@ -1,10 +1,10 @@
 {
   "name": "geocodr",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A node module that uses Google's Geocoding API to return latitude and longitude.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
   "homepage": "https://github.com/Otolock/geocodr#readme",
   "dependencies": {
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }
