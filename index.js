@@ -29,6 +29,26 @@ function Geocoder(API_KEY) {
 			callback(null, coordinates);
 		});
 	}
+
+	/* Given a latitude and longitude, returns object containing address. */
+	this.reverseGeocode = function(lat, lng, callback) {
+		const options = {
+			url: this.BASE_URL + 'latlng=' + lat + ',' + lng + '&key=' + this.API_KEY,
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json',
+				'Accept-Charset': 'utf-8',
+			}
+		}
+
+		request(options, function(err, res, body) {
+			if (err) { callback(err); }
+			
+			let data = JSON.parse(body);
+			let address = data.results[0].formatted_address;
+			callback(null, address);
+		});
+	}
 };
 
 module.exports = {
