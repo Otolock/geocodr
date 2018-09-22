@@ -7,12 +7,20 @@ A node module that uses Google's Geocoding API to return latitude and longitude
 2. Obtain a Google Geocoding API key: [Getting an API key](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 
 # Sample Usage
-    var geocodr = require('geocodr');
+```javascript
+var Geocoder = require('./index.js').Geocoder;
 
-    geocodr.getGeocode('ENTER YOUR API KEY HERE', 'New York, NY', function(err, data) {
-	    if (err) {
-	    	console.log(err);
-	    }
+let geo = new Geocoder(YOUR_API_KEY_HERE);
 
-    	console.log('Lat: ' + data.lat + '\n' + 'Long: ' + data.lng);
-    });
+geo.geocode(process.argv[2] || 'San Juan, PR', function(err, coordinates) {
+	if (err) { console.error('ERROR: ' + err); }
+
+	console.log(coordinates);
+});
+
+geo.reverseGeocode(process.argv[3] || '18.465540', process.argv[4] || '-66.105736', function(err, address) {
+	if (err) { console.error('ERROR: ' + err); }
+
+	console.log(address);
+});
+```
