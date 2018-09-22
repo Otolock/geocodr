@@ -16,9 +16,7 @@ function Geocoder(API_KEY) {
 		}
 
 		request(options, function(err, res, body) {
-			if (err) {
-				callback(err);
-			}
+			if (err) { callback(err); }
 
 			let data = JSON.parse(body);
 			let coordinates = {
