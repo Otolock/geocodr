@@ -8,7 +8,7 @@ A node module that uses Google's Geocoding API to return latitude and longitude
 
 # Sample Usage
 ```javascript
-var Geocoder = require('./index.js').Geocoder;
+var Geocoder = require('gocodr').Geocoder;
 
 let geo = new Geocoder(YOUR_API_KEY_HERE);
 
