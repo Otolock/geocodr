@@ -28,7 +28,7 @@ function Geocoder(API_KEY) {
 		});
 	}
 
-	/* Given a latitude and longitude, returns object containing address. */
+	/* Given a latitude and longitude, returns object containing city, state and country code. */
 	this.reverseGeocode = function(lat, lng, callback) {
 		const options = {
 			url: this.BASE_URL + 'latlng=' + lat + ',' + lng + '&key=' + this.API_KEY,
@@ -43,8 +43,28 @@ function Geocoder(API_KEY) {
 			if (err) { callback(err); }
 			
 			let data = JSON.parse(body);
-			let address = data.results[0].formatted_address;
-			callback(null, address);
+
+			/* Snippet taken from https://gist.github.com/danasilver/6024009#gistcomment-1620556 */
+			let storableLocation = {};
+
+			for (var ac = 0; ac < data.results[0].address_components.length; ac++) {
+				    
+				   var component = data.results[0].address_components[ac];
+				    
+				   if(component.types.includes('sublocality') || component.types.includes('locality')) {
+						         storableLocation.city = component.long_name;
+						    }
+				   else if (component.types.includes('administrative_area_level_1')) {
+						         storableLocation.state = component.short_name;
+						    }
+				   else if (component.types.includes('country')) {
+						         storableLocation.country = component.long_name;
+						         storableLocation.registered_country_iso_code = component.short_name;
+						    }
+
+			};
+
+			callback(null, storableLocation);
 		});
 	}
 };
