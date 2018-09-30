@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Otolock/geocodr.git"
+    "url": "git+https://github.com/Otolock/gocoder.git"
   },
   "keywords": [
     "geocoding",
@@ -20,14 +20,10 @@
   "author": "Antonio Santos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Otolock/geocodr/issues"
+    "url": "https://github.com/Otolock/gocoder/issues"
   },
-  "homepage": "https://github.com/Otolock/geocodr#readme",
+  "homepage": "https://github.com/Otolock/gocoder#readme",
   "dependencies": {
     "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0"
   }
 }
