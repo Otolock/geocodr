@@ -1,6 +1,6 @@
 {
   "name": "gocoder",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A node module that uses Google's Geocoding API to return latitude and longitude.",
   "main": "index.js",
   "scripts": {
