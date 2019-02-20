@@ -1,6 +1,6 @@
 {
   "name": "gocoder",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Performs geocoding and reverse-geocoding functions.",
   "main": "index.js",
   "repository": "git@github.com:Otolock/gocoder.git",
