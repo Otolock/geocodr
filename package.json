@@ -1,29 +1,16 @@
 {
   "name": "gocoder",
   "version": "3.0.0",
-  "description": "A node module that uses Google's Geocoding API to return latitude and longitude.",
+  "description": "Performs geocoding and reverse-geocoding functions.",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Otolock/gocoder.git"
-  },
-  "keywords": [
-    "geocoding",
-    "reverse",
-    "geocoding",
-    "latitude",
-    "longitude"
-  ],
-  "author": "Antonio Santos",
+  "repository": "git@github.com:Otolock/gocoder.git",
+  "author": "Antonio Santos <aj.santos128@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Otolock/gocoder/issues"
+  "private": false,
+  "devDependencies": {
+    "jest": "^24.1.0"
   },
-  "homepage": "https://github.com/Otolock/gocoder#readme",
-  "dependencies": {
-    "request": "^2.88.0"
+  "scripts": {
+    "test": "jest tests/"
   }
 }
